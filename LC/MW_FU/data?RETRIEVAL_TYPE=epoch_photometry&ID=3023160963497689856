@@ -1,0 +1,148 @@
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
+	<DESCRIPTION>Epoch photometry. This table contains light curve data points. Each entry is a photometric flux-time pair for a given object, band and time. It follows the (evolving) VO convention for time series as much as possible. At the time of writing, a VO recommendation has not yet been released.</DESCRIPTION>
+<RESOURCE type="results">
+<TABLE>
+<FIELD datatype="long" name="source_id" utype="meta.id;meta.main">
+<DESCRIPTION>Source Id. A unique single numerical identifier of the source obtained from GaiaSource.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="long" name="transit_id" ucd="meta.version">
+<DESCRIPTION>Transit unique identifier. For a given object, a transit comprises the different Gaia observations (SM, AF, BP, RP and RVS) obtained for each focal plane crossing.</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="*" datatype="char" name="band" ucd="instr.bandpass" utype="ssa:DataID.Bandpass">
+<DESCRIPTION>Photometric band. Values: G (per-transit combined SM-AF flux), BP (blue photometer integrated flux) and RP (red photometer integrated flux).</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="time" ucd="time.epoch;VOX:Image_MJDateObs" unit="d" utype="spec:Spectrum.Data.TimeAxis.Value">
+<DESCRIPTION>Different times are defined for each band. For G, it is the field-of-view transit averaged observation time. For BP and RP, it is the observation time of the BP CCD transit. The units are Barycentric JD (in TCB) in days -2,455,197.5, computed as follows. First the observation time is converted from On-board Mission Time (OBMT) into Julian date in TCB (Temps Coordonnee Barycentrique). Next a correction is applied for the light-travel time to the Solar system barycentre, resulting in Barycentric Julian Date (BJD). Finally, an offset of 2,455,197.5 days is applied (corresponding to a reference time $T_0$ at 2010-01-01T00:00:00) to have a conveniently small numerical value. Although the centroiding time accuracy of the individual CCD observations is (much) below 1~ms (e.g. in BP and RP), the G band observation time is averaged over typically 9 CCD observations taken in a time range of about 44sec.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="mag" ucd="phot.mag;em.opt" unit="mag">
+<DESCRIPTION>Vega magnitude, computed from the flux applying the zero-point defined in ExtPhotZeroPoint.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="flux" ucd="em.opt;phot.flux;stat.mean" unit="e-/s" utype="spec:Spectrum.Data.SpectralAxis.Value">
+<DESCRIPTION>Band flux value for the transit. For G band, it is a combination of individual SM-AF CCD fluxes. For BP and RP bands, it is an integrated CCD flux.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="flux_error" ucd="em.opt;phot.flux;stat.error" unit="e-/s">
+<DESCRIPTION>Flux error. If the flux has been rejected or is unavailable, this error will be set to null.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="flux_over_error" ucd="em.opt;phot.flux;stat.error">
+<DESCRIPTION>Band flux divided by its error. If the flux has been rejected or is unavailable, this field will be set to null.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="boolean" name="rejected_by_photometry" ucd="meta.code.status">
+<DESCRIPTION>Rejected by DPAC photometry processing.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="boolean" name="rejected_by_variability" ucd="meta.code.status">
+<DESCRIPTION>Rejected by DPAC variability processing (or variability analysis).</DESCRIPTION>
+</FIELD>
+<FIELD datatype="long" name="other_flags" ucd="meta.code.status">
+<DESCRIPTION>Additional processing flags. This field contains extra information on the data used to compute the fluxes and their quality. It provides debugging information that may be safely ignored for many general purpose applications. The field is a collection of binary flags, whose values can be recovered applying bit shifting and masking operations. Each band has different binary flags in different positions, as shown below. Bit numbering is as follows: least significant bit = 1 and most significant bit = 64 
+G band:
+	 Bit 1: SM transit rejected by photometry processing.
+	 Bit 2: AF1 transit rejected by photometry processing.
+	 Bit 3: AF2 transit rejected by photometry processing.
+	 Bit 4: AF3 transit rejected by photometry processing.
+	 Bit 5: AF4 transit rejected by photometry processing.
+	 Bit 6: AF5 transit rejected by photometry processing.
+	 Bit 7: AF6 transit rejected by photometry processing.
+	 Bit 8: AF7 transit rejected by photometry processing.
+	 Bit 9: AF8 transit rejected by photometry processing.
+	 Bit 10: AF9 transit rejected by photometry processing.
+	 Bit 13: G band flux scatter larger than expected by photometry processing (all CCDs considered).
+	 Bit 14: SM transit unavailable by photometry processing.
+	 Bit 15: AF1 transit unavailable by photometry processing.
+	 Bit 16: AF2 transit unavailable by photometry processing.
+	 Bit 17: AF3 transit unavailable by photometry processing.
+	 Bit 18: AF4 transit unavailable by photometry processing.
+	 Bit 19: AF5 transit unavailable by photometry processing.
+	 Bit 20: AF6 transit unavailable by photometry processing.
+	 Bit 21: AF7 transit unavailable by photometry processing.
+	 Bit 22: AF8 transit unavailable by photometry processing.
+	 Bit 23: AF9 transit unavailable by photometry processing.
+
+BP band:
+	 Bit 11: BP transit rejected by photometry processing.
+	 Bit 24: BP transit photometry rejected by variability processing.
+RP band:
+	 Bit 12: RP transit rejected by photometry processing.
+	 Bit 25: RP transit photometry rejected by variability processing.</DESCRIPTION>
+</FIELD>
+<FIELD datatype="long" name="solution_id" ucd="meta.version">
+<DESCRIPTION>All Gaia data processed by the Data Processing and Analysis Consortium comes tagged with a solution identifier. This is a numeric field attached to each table row that can be used to unequivocally identify the version of all the subsystems that where used in the generation of the data as well as the input data used. It is mainly for internal DPAC use but is included in the published data releases to enable end users to examine the provenance of processed data products. To decode a given solution ID  visit https://gaia.esac.esa.int/decoder/solnDecoder.jsp</DESCRIPTION>
+</FIELD>
+<DATA>
+<BINARY2>
+<STREAM encoding='base64'>
+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
+</STREAM>
+</BINARY2>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>
